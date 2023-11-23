@@ -24,8 +24,11 @@
 ```
 
 ## 3. git init
-- TODO
-    - See 5. ansibleで流すファイルの設定をする
+- 今年は1台だけgit管理をする
+    - 先に`/etc`配下のgit管理したいものを`etc/`にcpしておくと:yosa:
+    - `service_name`配下でgit init
+    - .gitignoreの設定
+        - webapp配下全て入れてもOK
 
 ## 4. 言語実装の確認
 - 初期の言語実装を確認する
@@ -53,4 +56,11 @@ See https://github.com/tsuzuki-takaaki/isucon/tree/main/setup
 
 ## 7. 初回benchmarkの実行
 - scoreをmemoして置くところを決めておく
+
+## 決まり事
+- ロードバランシングを理解できなかったので今年はやらない
+    - かなり試したけど、エラーの理由がわからなかった
+- 1. nginx + app, 2. DB の2台構成にする
+- DBサーバの分割は初期にやらなくてもいい
+- git管理・自動化・ボトルネックの発見・issue管理を完璧にできるようにする
 
