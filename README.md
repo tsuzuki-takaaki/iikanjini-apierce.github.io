@@ -27,9 +27,15 @@
 ## 3. git init
 - 今年は1台だけgit管理をする
     - 先に`/etc`配下のgit管理したいものを`etc/`にcpしておくと:yosa:
+        - `/etc/nginx/nginx.cnf`, `/etc/nginx/sites-available/service_name.conf`
+        - `/etc/mysql/**/*.cnf`
     - `service_name`配下でgit init
     - .gitignoreの設定
         - webapp配下全て入れてもOK
+- sshでpushできるようにする
+    - `ssh-keygen -t ed25519 -C "メアド@gmail.com"`
+    - https://zenn.dev/v22uta/articles/038036c4b0c686
+- localのgitconfigをcpしてcommitできるようにする
 
 ## 4. 言語実装の確認
 - 初期の言語実装を確認する
