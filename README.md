@@ -68,4 +68,5 @@ See https://github.com/tsuzuki-takaaki/isucon/tree/main/setup
 - 1. nginx + app, 2. DB の2台構成にする
 - DBサーバの分割は初期にやらなくてもいい
 - git管理・自動化・ボトルネックの発見・issue管理を完璧にできるようにする
+- 午前中にsetup + issue管理を終える
 
