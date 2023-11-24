@@ -70,3 +70,42 @@ See https://github.com/tsuzuki-takaaki/isucon/tree/main/setup
 - git管理・自動化・ボトルネックの発見・issue管理を完璧にできるようにする
 - 午前中にsetup + issue管理を終える
 
+## Tips
+- Query
+    - DBに入って確認する -> schemaでas codeとして管理する(初期化時にdrop tableが走るはず)
+    - 1回の質(index, ...etc)
+    - 回数(N+1, ...etc)
+- benchmarkを回すとき(initialize時)に毎回drop-tableをしている可能性が高いので、dbで直接indexを貼るのは試す時だけ
+    - schemaのところに書けばいいはず
+- create index
+    - インデックス名は`idx_column`で:yosa:
+```sql
+create index index_name on table_name (column_name);
+CREATE INDEX index_name ON table_name (column1, column2);
+```
+- create table時
+```sql
+CREATE TABLE `isu_condition` (
+  `id` bigint AUTO_INCREMENT,
+  `jia_isu_uuid` CHAR(36) NOT NULL,
+  `timestamp` DATETIME NOT NULL,
+  `is_sitting` TINYINT(1) NOT NULL,
+  `condition` VARCHAR(255) NOT NULL,
+  `message` VARCHAR(255) NOT NULL,
+  `created_at` DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
+  INDEX idx_jiaisuuuid_timestamp (`jia_isu_uuid`, `timestamp`),
+  INDEX idx_jiaisuuuid (`jia_isu_uuid`),
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8mb4;
+```
+- DBのリモート接続はDB_HOSTのipを変えただけではうまくいかない
+    - https://isucon.net/archives/56082639.html
+- tmux
+    - ctrl + b(プレフィクス) -> "
+        - 上下に分割できる
+    - ctrl + b -> 9
+        - 次のペインに移動できる
+- 穴の確認
+```sh
+% sudo ss -lnpt
+```
