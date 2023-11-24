@@ -66,6 +66,7 @@ See https://github.com/tsuzuki-takaaki/isucon/tree/main/setup
 - ロードバランシングを理解できなかったので今年はやらない
     - かなり試したけど、エラーの理由がわからなかった
 - 1. nginx + app, 2. DB の2台構成にする
+    - bind_addressを変えた後にrestartするのを忘れないように
 - DBサーバの分割は初期にやらなくてもいい
 - git管理・自動化・ボトルネックの発見・issue管理を完璧にできるようにする
 - 午前中にsetup + issue管理を終える
