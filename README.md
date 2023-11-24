@@ -47,11 +47,6 @@
 
 ## 5. ansibleで流すファイルの設定をする
 - デプロイスクリプト
-- mysql
-- nginx
-    - log formatまで
-- alp.yml
-    - この時点でbenchmark流してないので、後で設定でも:yosa:
 - `service_name`の変更
 
 See https://github.com/tsuzuki-takaaki/isucon/tree/main/setup
@@ -62,6 +57,9 @@ See https://github.com/tsuzuki-takaaki/isucon/tree/main/setup
 ```
 
 ## 7. 初回benchmarkの実行
+- 先に
+    - nginxのformatの設定
+    - mysqlのformatの設定
 - scoreをmemoして置くところを決めておく
 
 ## 決まり事
