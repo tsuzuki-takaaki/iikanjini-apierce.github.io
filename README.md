@@ -74,6 +74,12 @@ See https://github.com/tsuzuki-takaaki/isucon/tree/main/setup
 - 午前中にsetup + issue管理を終える
 
 ## Tips
+- nginxの設定ファイルを変更した後のsyntax check
+```sh
+ubuntu@ip-172-31-12-53:~$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+```
 - Query
     - DBに入って確認する -> schemaでas codeとして管理する(初期化時にdrop tableが走るはず)
     - 1回の質(index, ...etc)
